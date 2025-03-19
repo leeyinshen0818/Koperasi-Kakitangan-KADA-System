@@ -1823,18 +1823,3 @@ class AdminController extends Controller
                 return 'primary';
         }
     }
-
-    public function getAllTerminationRequests() {
-        try {
-            // Fetch all termination requests, including those that have been processed
-            $query = "SELECT mt.*, p.name, p.ic_no, p.gender 
-                     FROM membership_termination mt 
-                     JOIN pendingregistermember p ON mt.ic_no = p.ic_no 
-                     ORDER BY mt.created_at DESC";
-            return $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            error_log("Error in getAllTerminationRequests: " . $e->getMessage());
-            return [];
-        }
-    }
-}
