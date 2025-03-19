@@ -1822,6 +1822,7 @@ class AdminController extends Controller
             default:
                 return 'primary';
         }
+<<<<<<< HEAD
     }
 
     public function getAllTerminationRequests() {
@@ -1839,3 +1840,6 @@ class AdminController extends Controller
     }
 }
 
+=======
+    }
+>>>>>>> fb2676539731a91234ded2eda61e6880a3f45300
